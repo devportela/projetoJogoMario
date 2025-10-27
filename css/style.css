@@ -11,6 +11,7 @@
     margin: 0 auto;
     position: relative;
      overflow: hidden;
+     background: linear-gradient(#87ceeb,#e0f6ff);
     
 }
 
@@ -18,7 +19,12 @@
     position: absolute;
     bottom: 0;
     width: 80px;
-    animation:pipe-animation 2s infinite linear;
+    right: 50%;
+}
+.clouds{
+width: 550px;
+position: absolute;
+right: 50%;
 }
 
 .mario{
@@ -27,10 +33,53 @@
     bottom: 0px;
  
 }
+
+
 .jump{
-    animation: jump 500ms infinite ease-out;
+    animation: jump 500ms ease-out;
 }
 
+#start-btn, #restart-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 24px;
+    font-size: 18px;
+    border: none;
+    border-radius: 8px;
+    background-color: #ff0000;
+    color: #fff;
+    cursor: pointer;
+    font-family: 'Press Start 2P', cursive;
+    transition: transform 0.2s ease;
+}
+
+#start-btn:hover, #restart-btn:hover {
+    transform: scale(1.1);
+}
+
+#game-over {
+    text-align: center;
+    margin-top: 40px;
+    font-family: 'Press Start 2P', cursive;
+    color: #ff0000;
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+
+@keyframes clouds-animation {
+    from{
+        right: -550px;
+    } 
+    to{
+        right: 100%;
+    }
+    
+}
 
 
 
