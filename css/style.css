@@ -25,6 +25,7 @@
 width: 550px;
 position: absolute;
 right: 50%;
+
 }
 
 .mario{
@@ -100,6 +101,18 @@ bottom:180px;
 bottom: 0;
 }
 }
+
+
+@keyframes clouds-animation {
+    from{
+        right: -550px;
+    } 
+    to{
+        right: 100%;
+    }
+    
+}
+
 
 
 @keyframes pipe-animation {
