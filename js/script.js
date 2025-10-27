@@ -30,7 +30,7 @@ const jump = () => {
 document.addEventListener('keydown',jump)
 
 
-// Função para iniciar o loop do jogo
+
 function startLoop() {
     loop = setInterval(() => {
 
@@ -56,28 +56,28 @@ function startLoop() {
 }
 
 
-// Função para iniciar o jogo
+
 startBtn.addEventListener('click', () => {
   startBtn.style.display = 'none';
   themeSong.currentTime = 0;
   themeSong.play();
   gameStarted = true;
 
-  // adiciona animações apenas quando o jogo começar
+
   pipe.style.animation = 'pipe-animation 1.5s infinite linear';
   const clouds = document.querySelector('.clouds');
   clouds.style.animation = 'clouds-animation 10s infinite linear';
 
-  startLoop(); // inicia o loop do jogo
+  startLoop();
 });
 
-// Mostrar mensagem de Game Over e tocar som
+
 function showGameOver() {
   themeSong.pause();
   gameOverSound.play();
   gameOverMsg.classList.remove('hidden');
 
-  // congela a nuvem exatamente onde está
+
   const clouds = document.querySelector('.clouds');
   const cloudRight = parseFloat(getComputedStyle(clouds).right);
   clouds.style.animation = 'none';
@@ -85,12 +85,12 @@ function showGameOver() {
 }
 
 
-// botão "Jogar Novamente" funcional
+
 restartBtn.addEventListener('click', () => {
-  // esconde a mensagem de game over
+
   gameOverMsg.classList.add('hidden');
 
-  // reseta o mario
+
   mario.src = './img/mario.gif';
   mario.style.width = '150px';
   mario.style.marginLeft = '0px';
@@ -100,7 +100,7 @@ restartBtn.addEventListener('click', () => {
   pipe.style.animation = 'pipe-animation 1.5s infinite linear';
   pipe.style.left = '';
 
-  // reseta as nuvens
+
   const clouds = document.querySelector('.clouds');
   clouds.style.animation = 'clouds-animation 10s infinite linear';
 
@@ -108,10 +108,9 @@ restartBtn.addEventListener('click', () => {
   gameOverSound.pause();
   gameOverSound.currentTime = 0;
 
-  // garante que Mario pode pular imediatamente
   gameStarted = true;
 
-  // limpa o loop antigo e inicia novamente
+
   loop && clearInterval(loop);
   startLoop();
 });
