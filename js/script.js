@@ -43,7 +43,7 @@ function startLoop() { //starta o loop
             mario.style.animation = 'none'
             mario.style.bottom = `${marioPosition}px`
 
-            mario.src = './img/game-over.png' //quando o mario bate,muda pra imagem
+            mario.src = './img/game-over.png'
             mario.style.width = '75px'
             mario.style.marginLeft = '50px'
 
@@ -51,7 +51,6 @@ function startLoop() { //starta o loop
             showGameOver();
         }
 
-        // 🟢 Se o cano passou do Mario e o jogo não acabou, aumenta o score
         if (pipePosition < 0 && gameStarted) {
             score++;
             scoreDisplay.textContent = `Score: ${score}`;
@@ -82,8 +81,7 @@ function showGameOver() {
     gameOverSound.play();
     gameOverMsg.classList.remove('hidden');
 
-    finalScoreDisplay.textContent = `Sua pontuação: ${score}`; // 🟢 mostra score final
-
+    finalScoreDisplay.textContent = `Sua pontuação: ${score}`;
     const clouds = document.querySelector('.clouds');
     const cloudRight = parseFloat(getComputedStyle(clouds).right);
     clouds.style.animation = 'none';
