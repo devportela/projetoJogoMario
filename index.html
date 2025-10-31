@@ -17,12 +17,23 @@
         <img src="/img/pipe.png"  class="pipe">
     </div>
     <button id="start-btn">Start Game</button>
+<div class="game-board">
+  <div id="score">Score: 0</div> <!-- 🟢 novo placar -->
+  <img src="/img/mario.gif" class="mario">
+  <img src="/img/clouds.png" class="clouds">
+  <img src="/img/pipe.png"  class="pipe">
+</div>
+
+<button id="start-btn">Start Game</button>
+
 <div id="game-over" class="hidden">
   <h2>GAME OVER!</h2>
   <p>O Bowser venceu dessa vez... Tente novamente!</p>
+  <p id="final-score"></p> <!-- 🟢 mostra pontuação final -->
   <button id="restart-btn">Jogar Novamente</button>
 </div>
 
+''
 <audio id="theme-song" src="audio/mario-theme.mp3"></audio>
 <audio id="gameover-sound" src="audio/game-over.mp3"></audio>
 
