@@ -70,7 +70,7 @@ startBtn.addEventListener('click', () => {
     const clouds = document.querySelector('.clouds');
     clouds.style.animation = 'clouds-animation 10s infinite linear';
 
-    score = 0; // 🟢 Reseta o score
+    score = 0;
     scoreDisplay.textContent = `Score: ${score}`;
 
     startLoop();
