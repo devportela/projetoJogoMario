@@ -4,13 +4,13 @@ const startBtn = document.querySelector('#start-btn');
 const gameOverMsg = document.querySelector('#game-over');
 const themeSong = document.querySelector('#theme-song');
 const gameOverSound = document.querySelector('#gameover-sound');
-const restartBtn = document.querySelector('#restart-btn'); // botão "Jogar Novamente"
-const scoreDisplay = document.querySelector('#score'); // 🟢 novo placar
-const finalScoreDisplay = document.querySelector('#final-score'); // 🟢 mostra pontuação final
+const restartBtn = document.querySelector('#restart-btn');
+const scoreDisplay = document.querySelector('#score');
+const finalScoreDisplay = document.querySelector('#final-score');
 
 let gameStarted = false;
 let loop; // loop do jogo, vai ser reiniciado quando necessário
-let score = 0; // 🟢 contador de pontos
+let score = 0;
 
 //crio uma função pra definir o pulo do mario
 //a funcao sera chamada mais pra frente no código
@@ -35,7 +35,7 @@ function startLoop() { //starta o loop
         const pipePosition = pipe.offsetLeft
         const marioPosition = +getComputedStyle(mario).bottom.replace('px', "")
 
-        // Verifica colisão
+        //verifica se houve alguma colisão
         if (pipePosition <= 120 && pipePosition > 0 && marioPosition < 110) {
             pipe.style.animation = 'none'
             pipe.style.left = `${pipePosition}px`
@@ -48,13 +48,13 @@ function startLoop() { //starta o loop
             mario.style.marginLeft = '50px'
 
             clearInterval(loop)
-            showGameOver();
+            showGameOver(); //chamada do método gameOver
         }
 
         if (pipePosition < 0 && gameStarted) {
             score++;
             scoreDisplay.textContent = `Score: ${score}`;
-            pipe.style.right = '0'; // reseta o cano
+            pipe.style.right = '0'; 
         }
 
     }, 10)
@@ -77,11 +77,11 @@ startBtn.addEventListener('click', () => {
 });
 
 function showGameOver() {
-    themeSong.pause();
-    gameOverSound.play();
+    themeSong.pause(); //pausa a musica
+    gameOverSound.play(); 
     gameOverMsg.classList.remove('hidden');
 
-    finalScoreDisplay.textContent = `Sua pontuação: ${score}`;
+    finalScoreDisplay.textContent = `Sua pontuação: ${score}`; //pontuação final
     const clouds = document.querySelector('.clouds');
     const cloudRight = parseFloat(getComputedStyle(clouds).right);
     clouds.style.animation = 'none';
@@ -89,5 +89,5 @@ function showGameOver() {
 }
 
 restartBtn.addEventListener('click', () => {
-    location.reload();
+    location.reload(); //botao restartBtn reseta a pagina
 });
